@@ -1,6 +1,5 @@
-
 environment {
-    JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-11.0.18.0.10-1.amzn2.0.1.amd64/bin/java'
+    JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-11.0.18.0.10-1.amzn2.0.1.x86_64'
 }
 
 
@@ -19,8 +18,8 @@ pipeline {
 	        }
 	        stage('Build') {
 	            steps {
-	                dir("/var/lib/jenkins/workspace/pipelineusingmaven") {
-	                sh 'mvn -f initial/pom.xml clean package'
+	                dir("/var/lib/jenkins/workspace") {
+	                sh 'mvn -f pipelineusingmaven/pom.xml clean package'
 	                }
 	            }
 	        }
